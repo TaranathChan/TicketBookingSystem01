@@ -2,9 +2,9 @@
 
 ## People
 
-- Written by Alvin Wanjala
-- Date: March 8, 2024
-- Last Updated: April 8, 2024
+- Written by Taranath Chan
+- Date: March 11, 2025
+- Last Updated: April 11, 2025
 
 ## Overview
 
@@ -144,5 +144,6 @@ The events endpoint allows users to perfom CRUD operations on events. The auth e
 To provide better performance, caching is used. This is because this is a read-heavy API whereby the number of read requests is higher than the number of write requests (create, update, delete calls). For caching, Redis in-memory cache is used to cache all idempotent requests. 
 
 In the ticketbookingsystem API, read requests to events data are cached  to Redis when a first request is made. Subsequent requests to the API are then served from the cache, which ensures better read perfomance relative to reading from slower database storage.
+
 
 A middleware function is used for implenting this functionality. 
